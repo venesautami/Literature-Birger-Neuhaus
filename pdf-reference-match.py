@@ -5,7 +5,7 @@ import os
 import pandas as pd
 
 # chose the folder containing PDFs
-pdf_folder = r"S:\transfert\#JOBSTUDENTS#\2025\Venesa - Datac\Literature Birger Neuhaus\slides R-Z" #change based on the folder path 
+pdf_folder = r"folder path" #change based on the folder path 
 
 def get_pdfs(pdf_folder):
     # get PDF names without the ".pdf" extension
@@ -29,7 +29,7 @@ save_pdfs_to_excel(pdf_folder)
 from docx import Document
 
 # path to word file
-docx_file = r"S:\transfert\#JOBSTUDENTS#\2025\Venesa - Datac\Literature Birger Neuhaus\References_slides_5-8-25.docx" #change based on the folder path
+docx_file = r"file path" #change based on Word the file path
 doc = Document(docx_file)
 
 references = []
@@ -53,7 +53,7 @@ if current_ref:
 
 # save to Excel
 df = pd.DataFrame({"Reference": references})
-output_file = r"S:\transfert\#JOBSTUDENTS#\2025\Venesa - Datac\Literature Birger Neuhaus\References_slides_5-8-25.xlsx" # fill path to output file
+output_file = r"output folder path" # fill path to output file
 df.to_excel(output_file, index=False)
 
 
@@ -63,7 +63,7 @@ df.to_excel(output_file, index=False)
 # matched pdf and reference move out to sheet 2
 import re
 
-file_path = r"S:\transfert\#JOBSTUDENTS#\2025\Venesa - Datac\Literature Birger Neuhaus\ref.xlsx" # path to excel in which pdf filename and reference together in the same sheet
+file_path = r"excel file path" # path to excel in which pdf filename and reference together in the same sheet
 df = pd.read_excel(file_path, header=None, dtype=str)
 
 # ensure columns exist
@@ -109,6 +109,7 @@ for idx, row in df.iterrows():
 with pd.ExcelWriter(file_path.replace(".xlsx", "_matched_sheet2.xlsx")) as writer:
     df.to_excel(writer, sheet_name="Sheet1", index=False, header=False)
     pd.DataFrame(matched_rows).to_excel(writer, sheet_name="Sheet2", index=False, header=False)
+
 
 
 
