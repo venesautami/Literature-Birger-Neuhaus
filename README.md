@@ -13,8 +13,9 @@ To automate the management of literature references and PDFs, the initial purpos
    - Volume/Pages (suffix)
    - DOI
 
-
-
+## Script
+pdf-reference-match.py (for steps 1-3)
+parse-reference.py (for step 4)
 
 ## Development Note
 Some parts of the scripts and parsing logic were improved with the assistance of AI tools to optimize code structure and automation.
