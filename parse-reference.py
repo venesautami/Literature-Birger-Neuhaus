@@ -45,7 +45,7 @@ def parse_reference(ref):
     return pd.Series([title, authors, year, journal, suffix, doi])
 
 # apply parsing
-df[['title', 'authors', 'year', 'journal', 'suffix', 'doi']] = df['references'].apply(parse_reference)
+df[['title', 'authors', 'year', 'journal', 'suffix', 'doi']] = df['references'].apply(parse_reference) #fill with column name
 
 # save back to the same Excel file
 df.to_excel(file_path, index=False)
@@ -54,3 +54,4 @@ df.to_excel(file_path, index=False)
 # Save back to the same Excel file, not a new excel be careful with losing the original version
 df.to_excel(file_path, index=False)
 print("References parsed and Excel updated successfully!")
+
